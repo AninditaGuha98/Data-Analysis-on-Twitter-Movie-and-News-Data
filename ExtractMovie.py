@@ -1,6 +1,6 @@
 import pymongo
 
-mongo = pymongo.MongoClient("54.89.151.125:27017")
+mongo = pymongo.MongoClient("")
 db = mongo['Data_Assignment']
 col_movies = db['MoviesData']
 
