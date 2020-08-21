@@ -16,7 +16,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
 auth.set_access_token(access_key, access_token_secret)
 api = tweepy.API(auth)
 
-mongo = pymongo.MongoClient("54.89.151.125:27017")
+mongo = pymongo.MongoClient("")
 db = mongo['Data_Assignment']
 col_twitter = db['TwitterData']
 col_movies = db['MoviesData']
