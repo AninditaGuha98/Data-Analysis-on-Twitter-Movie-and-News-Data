@@ -7,10 +7,10 @@ import json
 import requests
 import pymongo
 
-consumer_key = "honewDSojeG27hbCgJVa5v2QB"
-consumer_secret_key = "O2tshEB56cazmwIUAus6bAl7irtWD6zLvbsWUeZ5PmSvj6G9bj"
-access_key = "1233890579500748801-yL8UpEdBI50Dw5fdC4hVqNJfRkZQHc"
-access_token_secret = "WP6ky4J88R87eJtSy3Wrsgs56C3D5kCL2HlYnf7ywJVh4"
+consumer_key = ""
+consumer_secret_key = ""
+access_key = ""
+access_token_secret = ""
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
 auth.set_access_token(access_key, access_token_secret)
@@ -74,7 +74,7 @@ def extract_news():
                    'q=' + words + '&'
                                   'from=2020-03-27&'
                                   'sortBy=popularity&'
-                                  'apiKey=2129226f4cf44782987985b706424b14')
+                                  'apiKey=')
             response = requests.get(url)
             to_clean = response.json()
             for i in range(len(to_clean['articles'])):
@@ -99,13 +99,13 @@ keywords_movie = ["Canada", "University", "Vancouver", "Halifax", "Canada Educat
 def movie_data():
     movie_list = []
     for words in keywords_movie:
-        url1 = ('http://www.omdbapi.com/?s=' + words + '&apikey=e8c963e3')
+        url1 = ('http://www.omdbapi.com/?s=' + words + '&apikey=')
         response = requests.get(url1)
         to_clean = response.json()
         try:
             for i in range(len(to_clean['Search'])):
                 titleSearch= to_clean['Search'][i]['Title']
-                url2=('http://www.omdbapi.com/?t=' + titleSearch + '&apikey=e8c963e3')
+                url2=('http://www.omdbapi.com/?t=' + titleSearch + '&apikey=')
                 response2=requests.get(url2)
                 to_clean2=response2.json()
                 dict_movies={
